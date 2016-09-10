@@ -1,31 +1,31 @@
 
 /*
-* Add multiple Brand attributes from Magento admin dashboard using js on browser console
-* 
-* Run this in Catalog > Attributes > Manage Attributes > Manage Label/ Options > Brand
+* Add multiple attributes into Magento using JavaScript
+* Written by: Abel
+*
 */
 
 (function() {
 
 	var config = {
-		// Change this to reflect the list of your attributes 
-		//list of category names (replace with ones you want to add)
+		/* ====================================================
+		* Replace the below with ones you want to add
+		* ====================================================*/
 		attributes: [
-			'Category name 1',
-			'Category name 2',
-			'Category name 3',
-			'Category name 4',
-			'Category name 5',
-			'Category name 6',
-			'Category name 7',
-			'Category name 8',
-			'Category name 9',
-			'Category name 10'
+			'Attribute name 1',
+			'Attribute name 2',
+			'Attribute name 3',
+			'Attribute name 4',
+			'Attribute name 5',
+			'Attribute name 6',
+			'Attribute name 7',
+			'Attribute name 8',
+			'Attribute name 9',
+			'Attribute name 10'
 		],
 		
 		jqueryLibUrl: "https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"
 	}
-
 
 
 	// load jquery
@@ -34,7 +34,7 @@
 		if (typeof jQuery != 'undefined') return false;
 		
 		var jq = document.createElement('script');
-		jq.src = 'https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js';
+		jq.src = config.jqueryLibUrl;
 		document.getElementsByTagName('head')[0].appendChild(jq);
 	}
 
@@ -43,7 +43,7 @@
 	function updateAttr() {
 		var attributes = config.attributes;
 		
-		// add category btn
+		// add Attribute btn
 		var $addCatLink = jQuery('#add_new_option_button');
 		
 		var $inputBox;
@@ -59,7 +59,6 @@
 			$addCatLink.click();
 		}
 	}
-	
 	
 	function init () {
 		loadJQuery();		
