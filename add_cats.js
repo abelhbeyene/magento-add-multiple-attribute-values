@@ -8,9 +8,9 @@
 (function() {
 
 	var config = {
-		// Change this to reflect the list of your categories 
+		// Change this to reflect the list of your attributes 
 		//list of category names (replace with ones you want to add)
-		categories: [
+		attributes: [
 			'Category name 1',
 			'Category name 2',
 			'Category name 3',
@@ -34,24 +34,27 @@
 		if (typeof jQuery != 'undefined') return false;
 		
 		var jq = document.createElement('script');
-		jq.src = config.jqueryLibUrl;
+		jq.src = 'https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js';
 		document.getElementsByTagName('head')[0].appendChild(jq);
 	}
 
 
-	// add categories
-	function updateCats() {
-		var cats = config.categories;
+	// add attributes
+	function updateAttr() {
+		var attributes = config.attributes;
 		
 		// add category btn
 		var $addCatLink = jQuery('#add_new_option_button');
 		
 		var $inputBox;
 		
-		// loop through all categories and add them - assuming you don't have some values in this already
-		for (var i = 0; i <= cats.length; i++) {
+		// loop through all attributes and add them - assuming you don't have some values in this already
+		for (var i = 0; i < attributes.length; i++) {
 			$inputBox = jQuery('[name="option[value][option_' + (i) + '][0]"]');
-			$inputBox.val(cats[i]);
+			$inputBox.val(attributes[i]);
+			
+			// output
+			console.log('Added: ' + attributes[i]);
 
 			$addCatLink.click();
 		}
@@ -65,7 +68,7 @@
 		setTimeout(function() {
 			// avoid jQuery confilct
 			jQuery.noConflict();			
-			updateCats();
+			updateAttr();
 		},3000);
 	}
 	
