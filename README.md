@@ -1,21 +1,26 @@
-# Magento add multiple attributes from browser console
-This JS snippet allows you to enter a list of Brands (or any attributes) from your browser console on the Magento admin. 
-I created this script when working with Magento and I had to create a substantial amount of product brands. I didn't really want to tinker with Magentos DB (with 250 tables) so decided to do this using JS from the console.
+# Magento: add multiple attribute values from browser console
+This JS snippet allows you to enter a list of attributes from your browser console on the Magento admin. 
+I created this script when working with Magento and I had to create a substantial amount of product attribute values. I didn't really want to tinker with Magentos DB (with 250 tables) so decided to do this using JS from the console.
 
-## About the script
-The script assumes you don't have any attributes within your list already.
+## How to
+- Use a modern browser (Chrome/Firefox/IE11)
+- Login into your Magento admin panel
+- Run this in: Catalog > Attributes > Manage Attributes > Manage Label/ Options > Brand
+- Your url will look something like the following: https://example.com/index.php/[YOUR_ADMIN_URI]/catalog_product_attribute/edit/attribute_id/
+  - *catalog_product_attribute* can differ depending what attribute you are editing.
 
-### How to run it
-Use a modern browser (Chrome/Firefox/IE11)
-Login into your Magento admin panel
-Run this in: Catalog > Attributes > Manage Attributes > Manage Label/ Options > Brand
-Your url will look something like the following:
-example.com/index.php/[YOUR_ADMIN_URI]/catalog_product_attribute/edit/attribute_id/
+- Once you are here hit F12/Right click and inspect element 
+  - Go to the console tab 
+- Replace the example attributes with your own list 
+- Copy the contents of the JS file and paste it into the console 
+- Hit enter!
+- There will be a 3 second delay giving jQuery some time to load and you should see new attributes being created from your list instantly.
+- Have a scroll and check all the entries are as you expect
+- If you are happy with how it looks just refresh your page and changes are not saved
 
-*catalog_product_attribute* can differ depending what attribute you are editing.
+## Note
+The script assumes you don't have any attributes within your list already so running it when you have some attributes in your list already won't work - it will just create blank input fields.
 
-Once you are here hit F12/Right click and inspect element > go to the console tab > Replace the example attributes with your own list > copy the contents of the JS file > paste it into the console > hit enter!
-
-There will be a 3 second delay giving jQuery some time to load and you should see new attributes being created from your list instantly.
+Use with care! 
 
 Good luck :)
