@@ -1,4 +1,4 @@
-# Magento: add multiple attributes from browser console
+# Magento: add multiple attribute values from browser console
 This JS snippet allows you to enter a list of attributes from your browser console on the Magento admin. 
 I created this script when working with Magento and I had to create a substantial amount of product attribute values. I didn't really want to tinker with Magentos DB (with 250 tables) so decided to do this using JS from the console.
 
